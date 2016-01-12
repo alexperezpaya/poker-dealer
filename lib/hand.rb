@@ -6,5 +6,4 @@ class Hand < PokerHand
     comparing_hands.map { |hand| Hand.new(hand)}
     Hand.new(comparing_hands.max)
   end
-
 end
