@@ -1,10 +1,3 @@
-require 'bundler'
-require 'rspec/autorun'
-
-Bundler.require :default, :test
-require_all 'lib'
-PokerHand.allow_duplicates = false
-
 describe Match do
   before do
     @match = Match.new
