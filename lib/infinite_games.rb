@@ -4,8 +4,7 @@ class InfiniteGames
     loop do
       game = RandomGame.new
       game.run
-      block.call(game.deck)
+      block.call(game.match)
     end
   end
-
 end

@@ -1,35 +1,35 @@
 class RandomGame
-  attr_accessor :deck
+  attr_reader :match
 
   def initialize
-    self.deck = Deck.new
+    @match = Match.new
   end
 
   def run
     5.times do
-      deck.deliver
+      match.deal
     end
-    deck.winner
+    match.winner
   end
 
   def print_status
-    p deck.round
-    case deck.round
+    p match.round
+    case match.round
     when :preflop
       p print_player_cards
     when :flop, :turn, :river
-      p print_deck
+      p print_match
     else
-      p deck.winner
+      p match.winner
     end
   end
 
-  def print_deck
-    p deck.table.join(' ')
+  def print_match
+    p match.table.join(' ')
   end
 
   def print_player_cards
-    deck.players_cards.each do |cards|
+    match.players_cards.each do |cards|
       p cards.join(' ')
     end
   end
